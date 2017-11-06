@@ -79,6 +79,8 @@ namespace ClearSkyPrediction
                Console.WriteLine("");
                Console.WriteLine("All weather data supplied by MetCheck. Please visit: ");
                Console.WriteLine(@"    http://www.metcheck.com/OTHER/ghx_global_hybrid_model.asp");
+               Console.WriteLine("Lunar data courtesy of US Navy Observatory . Please visit: ");
+               Console.WriteLine(@"    http://aa.usno.navy.mil/data/docs/api.php");
             }
             catch (Exception ex) {
                Console.WriteLine("");
