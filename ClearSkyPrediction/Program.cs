@@ -89,7 +89,7 @@ namespace ClearSkyPrediction
             }
          }
          Console.WriteLine("");
-         Console.WriteLine("Clear Sky Prediction by Lunatic Software. email phil@lunaticsoftware.org");
+         Console.WriteLine("Clear Sky Prediction Version 2.0 by Lunatic Software. email phil@lunaticsoftware.org");
          Console.WriteLine("Press any key to exit.");
          Console.ReadKey();
       }
