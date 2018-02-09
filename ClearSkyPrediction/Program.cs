@@ -55,23 +55,23 @@ namespace ClearSkyPrediction
                         if (moonData != null) {
                            string moonRises = moonData.MoonData.Where(p => p.Code == "R").Select(p => p.Time).FirstOrDefault();
                            if (moonData.Fracillum != null) {
-                              Console.WriteLine($"Evening of {step.Weekday} {eveningOf.Date:dd/MM/yyyy} Moon: {moonData.Fracillum} {moonData.CurrentPhase}" + (moonRises!=null?$" rises: {moonRises}":""));
+                              Console.WriteLine($"Evening of {eveningOf.DayOfWeek} {eveningOf.Date:dd/MM/yyyy} Moon: {moonData.Fracillum} {moonData.CurrentPhase}" + (moonRises!=null?$" rises: {moonRises}":""));
                            }
                            else {
-                              Console.WriteLine($"Evening of {step.Weekday} {eveningOf.Date:dd/MM/yyyy} Moon: {moonData.ClosesPhase.Phase}" + (moonRises != null ? $" rises: {moonRises}" : ""));
+                              Console.WriteLine($"Evening of {eveningOf.DayOfWeek} {eveningOf.Date:dd/MM/yyyy} Moon: {moonData.ClosesPhase.Phase}" + (moonRises != null ? $" rises: {moonRises}" : ""));
                            }
                         }
                         else {
-                           Console.WriteLine($"Evening of {step.Weekday} {eveningOf.Date:dd/MM/yyyy}");
+                           Console.WriteLine($"Evening of {eveningOf.DayOfWeek} {eveningOf.Date:dd/MM/yyyy}");
                         }
-                        Console.WriteLine($"     {step.UTCTime.TimeOfDay} - Seeing:{step.SeeingIndex}, Transp:{step.TransIndex}, Pickering:{step.PickeringIndex}, Temp: {step.Temperature}, Dew:{step.Dewpoint}, Rain = {step.Rain}%");
+                        Console.WriteLine($"     {step.UTCTime.TimeOfDay} - Seeing:{step.SeeingIndex}, Transp:{step.TransIndex}, Pickering:{step.PickeringIndex}, Temp: {step.Temperature}, Dew:{step.Dewpoint}, Rain = {step.Rain}%, Wind = {step.Windspeed}/{step.WindGustSpeed}");
                      }
                      else {
-                        Console.WriteLine($"     {step.UTCTime.TimeOfDay} - Seeing:{step.SeeingIndex}, Transp:{step.TransIndex}, Pickering:{step.PickeringIndex}, Temp: {step.Temperature}, Dew:{step.Dewpoint}, Rain = {step.Rain}%");
+                        Console.WriteLine($"     {step.UTCTime.TimeOfDay} - Seeing:{step.SeeingIndex}, Transp:{step.TransIndex}, Pickering:{step.PickeringIndex}, Temp: {step.Temperature}, Dew:{step.Dewpoint}, Rain = {step.Rain}%, Wind = {step.Windspeed}/{step.WindGustSpeed}");
                      }
                   }
                   Console.WriteLine("");
-                  Console.WriteLine("Seeing, Transp and Pickering range from 0-10 (worst to best), temp and dew in °C");
+                  Console.WriteLine("Seeing, Transp and Pickering range from 0-10 (worst to best), temp, dew in °C, wind speed/gust speed in mph.");
                }
                else {
                   Console.WriteLine("Time to rework some earlier data or get on with the decorating.");
